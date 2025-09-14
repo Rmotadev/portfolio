@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags essenciais para SEO e responsividade -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Rafael Mota - Dev Front-End especializado em interfaces modernas e responsivas">
+    <meta name="keywords" content="desenvolvedor, portfolio, web development, javascript, html, css">
+    <meta name="author" content="Rafael Mota">
+    
+    <!-- Título da página -->
+    <title>Rafael Mota - Dev Front-End</title>
+    
+    <!-- Link para o arquivo CSS principal -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts - Fira Code para código e Inter para texto -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Tela de loading inicial -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Carregando portfólio...</p>
+        </div>
+    </div>
+
+    <!-- Header principal com navegação fixa -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <!-- Logo/Nome do desenvolvedor -->
+            <div class="navbar-brand">
+                <a href="#home" class="brand-link">
+                    <span class="brand-text">&lt;rafaelMota/&gt;</span>
+                </a>
+            </div>
+
+            <!-- Menu de navegação desktop -->
+            <ul class="navbar-menu" id="navbar-menu">
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link" data-section="home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link" data-section="about">
+                        <i class="fas fa-user"></i>
+                        <span>Sobre</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#skills" class="navbar-link" data-section="skills">
+                        <i class="fas fa-code"></i>
+                        <span>Linguagens</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#projects" class="navbar-link" data-section="projects">
+                        <i class="fas fa-folder-open"></i>
+                        <span>Projetos</span>
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#contact" class="navbar-link" data-section="contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contato</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Toggle para modo escuro/claro -->
+            <div class="theme-toggle">
+                <button class="theme-btn" id="theme-toggle" aria-label="Alternar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <!-- Botão do menu mobile (hamburger) -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu mobile">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main class="main-content">
+        <!-- Seção Home/Hero - Apresentação inicial -->
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <!-- Conteúdo principal do hero -->
+                <div class="hero-content">
+                    <!-- Saudação inicial -->
+                    <p class="hero-greeting">Olá, eu sou</p>
+                    
+                    <!-- Nome principal com efeito de digitação -->
+                    <h1 class="hero-title">
+                        <span class="typing-text" id="typing-text">Rafael Mota</span>
+                        <span class="cursor">|</span>
+                    </h1>
+                    
+                    <!-- Subtítulo com profissão -->
+                    <h2 class="hero-subtitle">Rafael Mota - Desenvolvedor Front-End</h2>
+                    
+                    <!-- Descrição breve -->
+                    <p class="hero-description">
+                        Em transição de carreira da manutenção industrial para o desenvolvimento web. 
+                        Especializado em criar interfaces modernas e responsivas com 1 ano de experiência freelancer.
+                    </p>
+                    
+                    <!-- Botões de ação -->
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary" onclick="smoothScrollToSection(document.getElementById('projects'))">
+                            <i class="fas fa-eye"></i>
+                            Ver Projetos
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" onclick="smoothScrollToSection(document.getElementById('contact'))">
+                            <i class="fas fa-envelope"></i>
+                            Entre em Contato
+                        </a>
+                        <a href="assets/cv.pdf" class="btn btn-outline" download>
+                            <i class="fas fa-download"></i>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Animação de partículas de fundo -->
+                <div class="hero-animation">
+                    <canvas id="particles-canvas"></canvas>
+                </div>
+            </div>
+            
+            <!-- Indicador de scroll -->
+            <div class="scroll-indicator">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <p class="scroll-text">Role para baixo</p>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Mim -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <!-- Título da seção -->
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">01.</span>
+                        Sobre Mim
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- Conteúdo da seção sobre -->
+                <div class="about-content">
+                    <!-- Informações pessoais e foto -->
+                    <div class="about-info">
+                        <!-- Foto de perfil -->
+                        <div class="profile-image">
+                            <div class="image-container">
+                                <img src="assets/images/profile.jpg" alt="Foto de perfil de Rafael Mota" class="profile-img">
+                                <div class="image-overlay"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Texto descritivo -->
+                        <div class="about-text">
+                            <p class="about-paragraph">
+                                Sou um desenvolvedor front-end em transição de carreira, vindo da área de manutenção industrial 
+                                onde desenvolvi habilidades analíticas e de resolução de problemas que hoje aplico no desenvolvimento web. 
+                                Com 1 ano de experiência como freelancer, tenho me especializado em criar interfaces modernas e funcionais.
+                            </p>
+                            
+                            <p class="about-paragraph">
+                                Minha experiência anterior na indústria me ensinou a importância da precisão, planejamento e 
+                                manutenção preventiva - conceitos que aplico diretamente no desenvolvimento de código limpo, 
+                                otimizado e de fácil manutenção. Foco em HTML semântico, CSS responsivo e JavaScript moderno.
+                            </p>
+                            
+                            <p class="about-paragraph">
+                                Estou sempre buscando novos desafios e oportunidades para crescer na área de tecnologia, 
+                                combinando minha experiência técnica anterior com as novas habilidades em desenvolvimento web 
+                                para entregar soluções de qualidade aos meus clientes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline de experiências -->
+                    <div class="experience-timeline">
+                        <h3 class="timeline-title">Experiência Profissional</h3>
+                        
+                        <div class="timeline">
+                            <!-- Item da timeline -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-job">Desenvolvedor Front-End Freelancer</h4>
+                                    <p class="timeline-company">Freelancer</p>
+                                    <span class="timeline-period">2023 - Presente</span>
+                                    <p class="timeline-description">
+                                        Desenvolvimento de sites responsivos e aplicações web para pequenas e médias empresas.
+                                        Especialização em HTML5, CSS3, JavaScript e frameworks modernos como React.
+                                        Foco em UX/UI e otimização de performance.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Mais itens da timeline -->
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4 class="timeline-job">Técnico de Manutenção Industrial</h4>
+                                    <p class="timeline-company">Indústria Metalúrgica</p>
+                                    <span class="timeline-period">2018 - 2023</span>
+                                    <p class="timeline-description">
+                                        Manutenção preventiva e corretiva de equipamentos industriais.
+                                        Análise de falhas, resolução de problemas complexos e otimização de processos.
+                                        Desenvolvimento de habilidades analíticas e atenção aos detalhes.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Linguagens e Tecnologias -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <!-- Título da seção -->
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">02.</span>
+                        Linguagens & Tecnologias
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- Grid de skills -->
+                <div class="skills-grid">
+                    <!-- Categoria Frontend -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-palette"></i>
+                            Frontend
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item" data-skill="html">
+                                <div class="skill-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="95"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="css">
+                                <div class="skill-icon">
+                                    <i class="fab fa-css3-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS3</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="javascript">
+                                <div class="skill-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="88"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="react">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="sass">
+                                <div class="skill-icon">
+                                    <i class="fab fa-sass"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Sass/SCSS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categoria Frameworks & Bibliotecas -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-layer-group"></i>
+                            Frameworks & Bibliotecas
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item" data-skill="react">
+                                <div class="skill-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="styled-components">
+                                <div class="skill-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Styled Components</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="bootstrap">
+                                <div class="skill-icon">
+                                    <i class="fab fa-bootstrap"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Bootstrap</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Categoria Ferramentas -->
+                    <div class="skill-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-tools"></i>
+                            Ferramentas
+                        </h3>
+                        <div class="skills-list">
+                            <div class="skill-item" data-skill="git">
+                                <div class="skill-icon">
+                                    <i class="fab fa-git-alt"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Git</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="figma">
+                                <div class="skill-icon">
+                                    <i class="fab fa-figma"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">Figma</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="65"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item" data-skill="vscode">
+                                <div class="skill-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-progress="90"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Projetos -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <!-- Título da seção -->
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">03.</span>
+                        Projetos
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                
+                <!-- Grid de projetos -->
+                <div class="projects-grid">
+                    <!-- Projeto 1 -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="assets/images/Captura de tela 2025-09-12 220700.png" alt="Styllo Car Landing Page" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://rmotadev.github.io/styllo-carr/" class="project-link" aria-label="Ver projeto" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Rmotadev/styllo-carr" class="project-link" aria-label="Ver código" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-content">
+                            <h3 class="project-title">Styllo Car Landing Page</h3>
+                            <p class="project-description">
+                                Landing page responsiva para concessionária de veículos com design moderno, 
+                                galeria de carros e seções informativas desenvolvida durante curso no DevClub.
+                            </p>
+                            
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Projeto 2 -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="assets/images/Captura de tela 2025-09-12 220736.png" alt="Conversor de Moedas" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://rmotadev.github.io/conversor-de-moedas/" class="project-link" aria-label="Ver projeto" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Rmotadev/conversor-de-moedas" class="project-link" aria-label="Ver código" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-content">
+                            <h3 class="project-title">Conversor de Moedas</h3>
+                            <p class="project-description">
+                                Aplicação web para conversão de moedas em tempo real utilizando API externa, 
+                                com interface intuitiva e design responsivo.
+                            </p>
+                            
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">API</span>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Projeto 3 -->
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img src="assets/images/Captura de tela 2025-09-12 220756.png" alt="Personal Trainer Website" class="project-img">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://rmotadev.github.io/personal-trainer/" class="project-link" aria-label="Ver projeto" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Rmotadev/personal-trainer" class="project-link" aria-label="Ver código" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Trainer Website</h3>
+                            <p class="project-description">
+                                Site profissional para personal trainer com seções de serviços, 
+                                depoimentos, galeria de transformações e formulário de contato.
+                            </p>
+                            
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Botão para ver mais projetos -->
+                <div class="projects-footer">
+                    <a href="https://github.com/Rmotadev" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-github"></i>
+                        Ver Mais no GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <!-- Título da seção -->
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="section-number">04.</span>
+                        Entre em Contato
+                    </h2>
+                    <div class="section-line"></div>
+                </div>
+                
+                <!-- Conteúdo da seção de contato -->
+                <div class="contact-content">
+                    <!-- Informações de contato -->
+                    <div class="contact-info">
+                        <h3 class="contact-subtitle">Vamos trabalhar juntos?</h3>
+                        <p class="contact-description">
+                            Estou sempre aberto a novas oportunidades e projetos interessantes. 
+                            Entre em contato e vamos conversar sobre como posso ajudar você!
+                        </p>
+                        
+                        <!-- Lista de informações de contato -->
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:rafaelmotadev@outlook.com" class="contact-value">rafaelmotadev@outlook.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Telefone</span>
+                                    <a href="tel:+5551982759010" class="contact-value">+55 (51) 98275-9010</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="contact-label">Localização</span>
+                                    <span class="contact-value">Sapucaia do Sul, RS</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Links para redes sociais -->
+                        <div class="social-links">
+                            <a href="https://github.com/Rmotadev" class="social-link" target="_blank" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/rafaelfmota/" class="social-link" target="_blank" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://instagram.com/rafaelmotadev_" class="social-link" target="_blank" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulário de contato -->
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                            <span class="form-error" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                            <span class="form-error" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Assunto</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                            <span class="form-error" id="subject-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
+                            <span class="form-error" id="message-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer da página -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    &copy; 2024 Rafael Mota. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para detalhes dos projetos -->
+    <div class="modal" id="project-modal">
+        <div class="modal-overlay" id="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close" aria-label="Fechar modal">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-body" id="modal-body">
+                <!-- Conteúdo do modal será inserido dinamicamente via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="js/script.js"></script>
+</body>
+</html>
