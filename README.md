@@ -286,6 +286,6 @@ Se você encontrar algum problema ou tiver sugestões:
 
 ---
 
-**Desenvolvido com ❤️ e muito ☕ por [Seu Nome]**
+**Desenvolvido por Rafael Mota**
 
-*Última atualização: Dezembro 2024*
+*Última atualização: Setembro 2025*
