@@ -46,7 +46,8 @@ const AppState = {
     particlesConfig: {
         count: 50,
         maxSpeed: 1,
-        maxSize: 3,
+        maxSize: 5,
+        minSize: 2,
         particles: []
     },
     
