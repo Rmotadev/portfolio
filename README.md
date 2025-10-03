@@ -1,4 +1,5 @@
-# 🌟 Portfólio Pessoal - Desenvolvedor Full Stack
+# 🌟 Portfólio Pessoal - Desenvolvedor Front-end
+
 
 Um portfólio pessoal moderno e responsivo desenvolvido com HTML5, CSS3 e JavaScript vanilla, seguindo o tema **Atom One Dark** do VSCode para uma experiência visual única e profissional.
 
@@ -265,9 +266,6 @@ Contribuições são bem-vindas! Para contribuir:
 - Teste em diferentes navegadores e dispositivos
 - Atualize a documentação quando necessário
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## 🙏 Agradecimentos
 
@@ -282,7 +280,7 @@ Se você encontrar algum problema ou tiver sugestões:
 
 - **Abra uma issue** no GitHub
 - **Entre em contato** através do formulário do portfólio
-- **Envie um email** para: seu@email.com
+- **Envie um email** para: rafaelmotadev@outlook.com
 
 ---
 
